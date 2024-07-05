@@ -51,7 +51,7 @@ class ForecastFragment : Fragment() {
 
         searchBtn.setOnClickListener {
             val city = cityInput.text.toString()
-            val apiKey = "9ced84a4ee2242da8f0fd1c2df253b53"
+            val apiKey = "YOUR Api key"
             fetchData(city, apiKey)
         }
 
