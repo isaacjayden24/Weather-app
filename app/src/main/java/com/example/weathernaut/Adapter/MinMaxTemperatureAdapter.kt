@@ -38,8 +38,8 @@ class MinMaxTemperatureAdapter(private val weatherList: List<WeatherItem>) :
         private val dateView:TextView=itemView.findViewById(R.id.dateView)
 
         fun bind(weatherItem: WeatherItem) {
-            minTemperatureTextView.text = "Min Temp: ${weatherItem.main.temp_min}°C"
-            maxTemperatureTextView.text = "Max Temp: ${weatherItem.main.temp_max}°C"
+            minTemperatureTextView.text = "Min Temp: ${weatherItem.main.temp_min}°F"
+            maxTemperatureTextView.text = "Max Temp: ${weatherItem.main.temp_max}°F"
 
 
             // Converting Unix timestamp to a human-readable format

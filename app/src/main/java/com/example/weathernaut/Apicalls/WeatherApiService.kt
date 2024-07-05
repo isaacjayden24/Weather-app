@@ -31,18 +31,18 @@ interface WeatherApiService{
 
 
     @GET("weather")
-    fun getCurrentForecast(
+    suspend  fun getCurrentForecast(
         @Query("q") city: String,
         @Query("appid") apiKey: String
-    ): Call<WeatherDataT>
+    ): WeatherDataT
 
 
    @GET("forecast")
-  fun getHourlyData(
+ suspend fun getHourlyData(
        @Query("lat") latitude: Double,
        @Query("lon") longitude: Double,
        @Query("appid") apiKey: String
-   ): Call<WeatherResponse>
+   ): WeatherResponse
 
 
 }
