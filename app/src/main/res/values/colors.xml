@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_color">#F3E9FE</color>
     <color name="Text_color">#331866</color>
+    <color name="status_bar_color">#FF08C9FD</color>"
 </resources>

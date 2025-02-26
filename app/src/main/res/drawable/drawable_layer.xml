@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <color android:color="#FF080A2F" />
+</item>
+<item android:drawable="@drawable/container_iphone_pro" />
+<item>
+    <color android:color="#A6000000" />
+</item>
+</layer-list>

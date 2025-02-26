@@ -3,37 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/currentWeatherFragment2">
+    app:startDestination="@id/homePageFragment">
     <fragment
-        android:id="@+id/currentWeatherFragment2"
-        android:name="com.example.weathernaut.Overview.CurrentWeatherFragment"
-        android:label="fragment_current_weather"
-        tools:layout="@layout/fragment_current_weather" >
+        android:id="@+id/homePageFragment"
+        android:name="com.example.weathernaut.fragments.HomePageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
         <action
-            android:id="@+id/action_currentWeatherFragment2_to_locationSearchFragment"
-            app:destination="@id/locationSearchFragment" />
+            android:id="@+id/action_homePageFragment_to_airQualityFragment"
+            app:destination="@id/airQualityFragment" />
     </fragment>
     <fragment
-        android:id="@+id/locationSearchFragment"
-        android:name="com.example.weathernaut.Overview.LocationSearchFragment"
-        android:label="fragment_location_search"
-        tools:layout="@layout/fragment_location_search" >
-        <action
-            android:id="@+id/action_locationSearchFragment_to_forecastFragment2"
-            app:destination="@id/forecastFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/weatherMapFragment"
-        android:name="com.example.weathernaut.Overview.WeatherMapFragment"
-        android:label="fragment_weather_map"
-        tools:layout="@layout/fragment_weather_map" />
-    <fragment
-        android:id="@+id/forecastFragment2"
-        android:name="com.example.weathernaut.Overview.ForecastFragment"
-        android:label="fragment_forecast"
-        tools:layout="@layout/fragment_forecast" >
-        <action
-            android:id="@+id/action_forecastFragment2_to_weatherMapFragment"
-            app:destination="@id/weatherMapFragment" />
-    </fragment>
+        android:id="@+id/airQualityFragment"
+        android:name="com.example.weathernaut.fragments.AirQualityFragment"
+        android:label="fragment_airquality"
+        tools:layout="@layout/fragment_airquality" />
 </navigation>
