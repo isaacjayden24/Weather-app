@@ -143,7 +143,7 @@ tools:context=".fragments.HomePageFragment">
     <!-- Weather Icon -->
     <ImageView
         android:id="@+id/weathericon_imageview"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
         android:scaleType="centerInside"
@@ -157,6 +157,7 @@ tools:context=".fragments.HomePageFragment">
         android:id="@+id/temperature_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="28º"
         android:textColor="#000000"
         android:textSize="48sp"
