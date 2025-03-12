@@ -39,7 +39,7 @@ tools:context=".fragments.HomePageFragment">
         android:id="@+id/city_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Berlin"
+        android:text="Current weather"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -50,7 +50,7 @@ tools:context=".fragments.HomePageFragment">
 
     <!-- Date -->
     <TextView
-        android:id="@+id/text_date"
+        android:id="@+id/timetext_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="13 Dec, 2024"
@@ -72,7 +72,7 @@ tools:context=".fragments.HomePageFragment">
 
 
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/text_date"
+        app:layout_constraintTop_toBottomOf="@id/timetext_date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp"
@@ -266,153 +266,26 @@ tools:context=".fragments.HomePageFragment">
 
 
 
-    <LinearLayout
-        android:id="@+id/fivedayweatherforecast"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/forecast_recyclerView"
+        android:clipToPadding="false"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_below="@id/weather_stats_container"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:scrollbars="horizontal"
         app:layout_constraintTop_toBottomOf="@id/weather_stats_container"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp">
-
-        <!-- Day 1 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/dayOneForecastTemperature_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="29°C"
-                android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/dayOne_imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/clouds"
-                android:scaleType="centerInside" />
-
-            <TextView
-                android:id="@+id/dayOneTime_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15:00"
-                android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
-        </LinearLayout>
+        android:padding="16dp"
+        tools:listitem="@layout/weather_item"/>
 
 
 
-        <!-- Day 2 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/dayTwoForecastTemperature_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="26°C"
-                android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/dayTwo_imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/clouds"
-                android:scaleType="centerInside" />
 
-            <TextView
-                android:id="@+id/dayTwoTime_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16:00"
-                android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <!-- Day 3 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/dayThreeForecastTemperature_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="28°C"
-                android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/dayThree_imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/clouds"
-                android:scaleType="centerInside" />
-
-            <TextView
-                android:id="@+id/dayThreeTime_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="17:00"
-                android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <!-- Day 4 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/dayFourForecastTemperature_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="23°C"
-                android:textColor="#FFFFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/dayFour_imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/clouds"
-                android:scaleType="centerInside" />
-
-            <TextView
-                android:id="@+id/dayFourTime_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18:00"
-                android:textColor="#FFFFFFFF"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-    </LinearLayout>
 
 
 
