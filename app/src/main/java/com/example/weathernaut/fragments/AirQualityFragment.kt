@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
@@ -19,25 +16,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weathernaut.R
 import com.example.weathernaut.WeatherApp
-import com.example.weathernaut.adapter.ForecastAdapter
 import com.example.weathernaut.adapter.PollutionAdapter
 import com.example.weathernaut.ui.WeatherViewModel
 import com.example.weathernaut.ui.WeatherViewModelFactory
+
+import com.google.android.material.textfield.TextInputLayout
+
 import kotlinx.coroutines.launch
 import java.util.Locale
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AirQualityFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class AirQualityFragment : Fragment() {
 
     private lateinit var cityInput: EditText
     private lateinit var airQualityRecyclerView: RecyclerView
     private lateinit var pollutionAdapter: PollutionAdapter
-    private lateinit var searchBtn:ImageView
+    private lateinit var textLayoutInput:TextInputLayout
+
+
 
 
 
@@ -66,7 +63,14 @@ class AirQualityFragment : Fragment() {
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         cityInput=view.findViewById(R.id.cityInput)
         airQualityRecyclerView=view.findViewById(R.id.airquality_recyclerView)
-        searchBtn=view.findViewById(R.id.search_button)
+        textLayoutInput=view.findViewById(R.id.textLayoutInput)
+
+
+
+
+
+
+
 
 
 
@@ -82,18 +86,38 @@ class AirQualityFragment : Fragment() {
         airQualityRecyclerView.adapter = pollutionAdapter
 
 
+
+
+
         // Observe data and update adapter
         weatherViewModel.airPollutionData.observe(viewLifecycleOwner) { airPollutionList ->
-            Log.d("RecyclerView", "Received ${airPollutionList.size} items")
-            pollutionAdapter.updateData(airPollutionList)
+            if (airPollutionList.isNotEmpty()) {
+
+
+                pollutionAdapter.updateData(airPollutionList)
+
+
+
+
+
+            } else {
+                // Handle empty data case
+                Log.d("shimmerDebug", "No data received")
+                Toast.makeText(requireContext(), "No data available", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
 
 
-        searchBtn.setOnClickListener {
+
+
+        textLayoutInput.setEndIconOnClickListener {
             val cityName = cityInput.text.toString()
             if (cityName.isNotBlank() ) {
+
+
+
                 getLatLngFromCity(cityName)
             }else{
 
@@ -113,6 +137,9 @@ class AirQualityFragment : Fragment() {
 
 
     }
+
+
+
 
 
     private fun getLatLngFromCity(cityName: String) {

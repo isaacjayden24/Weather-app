@@ -44,11 +44,7 @@ import android.provider.Settings
 import com.example.weathernaut.NetworkReceiver
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomePageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class HomePageFragment : Fragment() {
 
     private lateinit var airQualityTextView: View

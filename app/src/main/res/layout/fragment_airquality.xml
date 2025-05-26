@@ -1,201 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fillViewport="true"
-    android:background="@drawable/background"
+    android:layout_width="match_parent"
+
     tools:context=".fragments.AirQualityFragment"
-    >
+    android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/container_iphone_pro"
+
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-                <!-- Circular Image at the Top -->
-                <ImageView
-                    android:id="@+id/image_ellipse"
-                    android:layout_width="250.8dp"
-                    android:layout_height="250.8dp"
-
-                    android:layout_marginStart="199.9dp"
-                    android:layout_marginTop="-102.45dp"
-                    android:layout_gravity="top|left"
-
-
-
-
-
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wind"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-                <!-- City Name -->
-                <TextView
-                    android:id="@+id/city_textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="AirPollution "
-                    android:textColor="#FF4084DF"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_marginTop="20dp"
-                    app:layout_constraintTop_toBottomOf="@id/image_ellipse"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-
+            android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/container_auto_layout_horizontal1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center"
-                    app:layout_constraintTop_toBottomOf="@id/city_textview"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
 
-
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                        <!-- Input Field -->
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="0dp"
+                        <!-- Date Range Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                            android:layout_marginBottom="16dp"
+                            app:cardElevation="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_gravity="center"
+                                            android:textColor="#FF4084DF"
+                                            android:text="Air Pollution"
+                                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+
+
+                                        <ImageView
+                                            android:id="@+id/imageView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/clouds" />
+
+
+
+
+
+                                </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textLayoutInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:endIconMode="custom"
+                            app:endIconDrawable="@drawable/search_icon"
+                            app:endIconContentDescription="Search">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/cityInput"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Enter City"
+                                    android:hint="Enter a city"
                                     android:textColor="#FF4084DF"
-                                    android:inputType="text" />
+                                    android:inputType="text"/>
+
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <!-- Search Button -->
-                        <ImageView
-                            android:id="@+id/search_button"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:layout_marginStart="10dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/search"
-                            android:contentDescription="Search" />
-                </LinearLayout>
 
 
 
-
-
-
-
-
-
-                <LinearLayout
-                    android:id="@+id/container_auto_layout_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/airquality_auto_layout_vertical"
-                    android:gravity="left|top"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/container_auto_layout_horizontal1"
-                    >
-
-                        <ImageView
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/clouds" />
+                            android:text="Air quality"
+                            android:textColor="#FF4084DF"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:layout_marginBottom="16dp"/>
 
-                        <LinearLayout
-                            android:id="@+id/container_auto_layout_horizontal2"
-                            android:layout_width="335dp"
-                            android:layout_height="28dp"
-                            android:layout_marginTop="15dp"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp">
 
-                                <TextView
-                                    android:layout_width="218dp"
-                                    android:layout_height="28dp"
-                                    android:gravity="left|center_vertical"
-                                    android:includeFontPadding="false"
-                                    android:maxLines="1"
-                                    android:singleLine="true"
-                                    android:text="Air Quality"
-                                    android:textColor="#FF4084DF"
-                                    android:textSize="20sp" />
 
-                                <ImageView
-                                    android:layout_width="29.05dp"
-                                    android:layout_height="28.22dp"
-                                    android:layout_marginStart="15dp"
-                                    android:scaleType="centerInside"
-                                    android:src="@drawable/clouds" />
 
-                        </LinearLayout>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/airquality_recyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="211dp"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
                 </LinearLayout>
 
+        </androidx.core.widget.NestedScrollView>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/airquality_recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical"
-                    app:layout_constraintTop_toBottomOf="@id/container_auto_layout_vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    tools:listitem="@layout/airquality_item"/>
-
-
-
-
-
-
-
-
-
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

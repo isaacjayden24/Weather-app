@@ -9,8 +9,6 @@ import com.example.weathernaut.R
 import com.example.weathernaut.modelsPollution.Item8
 
 
-
-
 class PollutionAdapter(private var pollutionList: List<Item8>) :
     RecyclerView.Adapter<PollutionAdapter.WeatherViewHolder>() {
 
@@ -42,12 +40,7 @@ class PollutionAdapter(private var pollutionList: List<Item8>) :
         """.trimIndent()
 
 
-
-
-
     }
-
-
 
 
     override fun getItemCount(): Int = pollutionList.size
