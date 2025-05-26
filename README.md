@@ -8,7 +8,7 @@ Built with kotlin.
 ## screenshot
 <img src="Docs/screenshots/homepage.png" width="250px">
 
-<img src="Docs/screenshots/airquality.png" width="250px">
+<img src="Docs/screenshots/airquality.jpg" width="250px">
 
 
 # Set up Requirements
